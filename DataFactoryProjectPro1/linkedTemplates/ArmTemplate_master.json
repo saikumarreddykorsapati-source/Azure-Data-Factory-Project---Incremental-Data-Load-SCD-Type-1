@@ -1,0 +1,91 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "DataFactoryProjectPro1"
+		},
+		"LST_DST2_AzureDataLakeStorage_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LST_DST2_AzureDataLakeStorage'"
+		},
+		"LS_DST1_AzureBlobStorage_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_DST1_AzureBlobStorage'"
+		},
+		"LS_DST_AzureSqlDatabase_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_DST_AzureSqlDatabase'"
+		},
+		"LS_SRC_AdlsGen2_AdventureWorksExcelSheet_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_SRC_AdlsGen2_AdventureWorksExcelSheet'"
+		},
+		"LS_SRC_AzureSqlDatabase_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_SRC_AzureSqlDatabase'"
+		},
+		"LST_DST2_AzureDataLakeStorage_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsgen2saprojectpro.dfs.core.windows.net/"
+		},
+		"LS_SRC_AdlsGen2_AdventureWorksExcelSheet_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsgen2saprojectpro.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "DataFactoryProjectPro1_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"LST_DST2_AzureDataLakeStorage_accountKey": {
+						"value": "[parameters('LST_DST2_AzureDataLakeStorage_accountKey')]"
+					},
+					"LS_DST1_AzureBlobStorage_connectionString": {
+						"value": "[parameters('LS_DST1_AzureBlobStorage_connectionString')]"
+					},
+					"LS_DST_AzureSqlDatabase_connectionString": {
+						"value": "[parameters('LS_DST_AzureSqlDatabase_connectionString')]"
+					},
+					"LS_SRC_AdlsGen2_AdventureWorksExcelSheet_accountKey": {
+						"value": "[parameters('LS_SRC_AdlsGen2_AdventureWorksExcelSheet_accountKey')]"
+					},
+					"LS_SRC_AzureSqlDatabase_connectionString": {
+						"value": "[parameters('LS_SRC_AzureSqlDatabase_connectionString')]"
+					},
+					"LST_DST2_AzureDataLakeStorage_properties_typeProperties_url": {
+						"value": "[parameters('LST_DST2_AzureDataLakeStorage_properties_typeProperties_url')]"
+					},
+					"LS_SRC_AdlsGen2_AdventureWorksExcelSheet_properties_typeProperties_url": {
+						"value": "[parameters('LS_SRC_AdlsGen2_AdventureWorksExcelSheet_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

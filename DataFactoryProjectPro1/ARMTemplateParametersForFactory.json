@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "DataFactoryProjectPro1"
+		},
+		"LST_DST2_AzureDataLakeStorage_accountKey": {
+			"value": ""
+		},
+		"LS_DST1_AzureBlobStorage_connectionString": {
+			"value": ""
+		},
+		"LS_DST_AzureSqlDatabase_connectionString": {
+			"value": ""
+		},
+		"LS_SRC_AdlsGen2_AdventureWorksExcelSheet_accountKey": {
+			"value": ""
+		},
+		"LS_SRC_AzureSqlDatabase_connectionString": {
+			"value": ""
+		},
+		"LST_DST2_AzureDataLakeStorage_properties_typeProperties_url": {
+			"value": "https://adlsgen2saprojectpro.dfs.core.windows.net/"
+		},
+		"LS_SRC_AdlsGen2_AdventureWorksExcelSheet_properties_typeProperties_url": {
+			"value": "https://adlsgen2saprojectpro.dfs.core.windows.net/"
+		}
+	}
+}
