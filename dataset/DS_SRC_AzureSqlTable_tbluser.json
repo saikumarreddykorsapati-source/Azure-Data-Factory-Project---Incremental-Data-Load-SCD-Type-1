@@ -1,0 +1,38 @@
+{
+	"name": "DS_SRC_AzureSqlTable_tbluser",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SRC_AzureSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "INC_LOAD"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Key",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Phone",
+				"type": "varchar"
+			},
+			{
+				"name": "Last_m",
+				"type": "date"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "tbluser"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

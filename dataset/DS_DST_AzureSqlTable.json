@@ -1,0 +1,38 @@
+{
+	"name": "DS_DST_AzureSqlTable",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_DST_AzureSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "INC_LOAD"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Key",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Phone",
+				"type": "varchar"
+			},
+			{
+				"name": "Last_m",
+				"type": "date"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "userData"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

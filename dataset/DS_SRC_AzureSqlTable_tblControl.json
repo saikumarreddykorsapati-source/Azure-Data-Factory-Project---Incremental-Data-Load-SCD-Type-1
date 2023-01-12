@@ -1,0 +1,31 @@
+{
+	"name": "DS_SRC_AzureSqlTable_tblControl",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SRC_AzureSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "INC_LOAD"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "TableName",
+				"type": "varchar"
+			},
+			{
+				"name": "LastLoadDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "tblControl"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

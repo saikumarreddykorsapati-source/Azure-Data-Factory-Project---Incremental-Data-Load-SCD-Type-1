@@ -1,0 +1,9 @@
+{
+	"name": "DataFactoryProjectPro1",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "077b1f7c-aecd-4bcc-825c-3100fbc922e0",
+		"tenantId": "0a570711-cdd2-49ed-8fdd-0c258575dffe"
+	}
+}
